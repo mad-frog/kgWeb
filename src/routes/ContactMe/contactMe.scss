@@ -1,0 +1,22 @@
+.contactsContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.contactsBlock {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.contactsInput {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.sendButton {
+  text-align: right;
+}

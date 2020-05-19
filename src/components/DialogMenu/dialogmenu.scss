@@ -1,0 +1,89 @@
+@import '../../variables.scss';
+
+.dialog-menu-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  height: 100%;
+  width: 100%;
+
+  z-index: 10;
+}
+@media only screen and (min-width: 600px) {
+  .dialog-menu-background {
+    z-index: -1;
+  }
+}
+
+.menu {
+  background-color: $primaryLight;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.34);
+  
+  width: 80%;
+  height: 100%;
+  position: relative;
+  overflow-y: scroll;
+
+  -webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+	transition: transform 300ms linear;
+}
+
+.menu-open {
+  -webkit-transform: none;
+  transform: none;
+  transition: transform 300ms linear;
+}
+
+.close-btn {
+  right: 0;
+  position: absolute;
+  padding: 10px;
+}
+
+.children-container {
+  padding-top: 30px;
+}
+
+.hidden {
+  background-color: transparent !important;
+  pointer-events: none;
+}
+
+.visible {
+  pointer-events: all;
+}
+
+
+
+
+
+.theme-dark {
+  .menu {
+    background-color: $mainBackground_dark;
+  }
+}
+
+.menu-animate-dark {
+  animation: menuAnimDark 1s linear;
+}
+@keyframes menuAnimDark {
+  from { background-color: $mainBackground_light; }
+  to { background-color: $mainBackground_dark; }
+}
+
+
+.theme-light {
+  .menu {
+    background-color: $mainBackground_light;
+  }
+}
+
+.menu-animate-light {
+  animation: menuAnimLight 1s linear;
+}
+@keyframes menuAnimLight {
+  from { background-color: $mainBackground_dark; }
+  to { background-color: $mainBackground_light; }
+}

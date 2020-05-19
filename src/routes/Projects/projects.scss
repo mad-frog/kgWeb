@@ -1,0 +1,25 @@
+.project-container {
+  padding: 30px;
+  padding-bottom: 48px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  // background-image: linear-gradient(#1d1a19, #242421);
+
+  img {
+    // max-width: 400px;
+    width: 100%;
+  }
+
+}
+
+// .project-container:nth-child(2n) {
+//   // background-color: #ffffff12;
+// }
+
+.separator {
+  height: 30px;
+  width: 100%;
+}

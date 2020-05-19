@@ -1,0 +1,34 @@
+@import '../../variables.scss';
+
+.footer-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  color: $primaryDark;
+}
+
+.social-icons {
+  display: flex;
+
+  a {
+    width: 50px;
+    height: 50px;
+    margin: 6px;
+    cursor: pointer;
+    color: $primaryDark;
+
+    svg {
+      width: inherit;
+      height: inherit;
+    }
+  }
+}
+
+.credits {
+  margin: 20px;
+}

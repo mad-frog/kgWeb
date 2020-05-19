@@ -1,0 +1,76 @@
+@import './variables.scss';
+
+.App {
+  width: 100%;
+  height: 100vh;
+}
+
+.App-header {
+  position: absolute;
+  height: $mob_heightHeader;
+}
+
+.App-content {
+  width: 100%;
+  position: absolute;
+  top: $mob_heightHeader;
+  bottom: 0;
+  z-index: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.App-min-content {
+  min-height: calc(100% - 200px);
+}
+
+
+/* 2 different themes */
+.theme-dark {
+  background-color: $mainBackground_dark;
+  color: $orange;
+
+  a, button {
+    color: $orange;
+  }
+
+  .App-content {
+    background-image: linear-gradient(#1d1a19, #3a312a);
+  }
+}
+.animate-dark {
+  animation: backgroundAnimDark 1s linear;
+}
+@keyframes backgroundAnimDark {
+  from {
+    background-color: $mainBackground_light;
+  }
+  to {
+    background-color: $mainBackground_dark;
+  }
+}
+
+
+.theme-light {
+  background-color: $mainBackground_light;
+  color: $primaryDark;
+
+  a, button {
+    color: $primaryDark;
+  }
+
+  .App-content {
+    background-image: linear-gradient(#96cff7,white);
+  }
+}
+.animate-light {
+  animation: backgroundAnimLight 1s linear;
+}
+@keyframes backgroundAnimLight {
+  from {
+    background-color: $mainBackground_dark;
+  }
+  to {
+    background-color: $mainBackground_light;
+  }
+}

@@ -1,0 +1,52 @@
+
+.hammer-scene {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.hammer {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.nail {
+  position: absolute;
+  left: 50px;
+  width: 40px;
+  height: 40px;
+}
+
+.scene-label {
+  position: relative;
+
+  font-size: 20px;
+  font-weight: bold;
+  font-family: arial;
+  font-weight: bold;
+
+  color: #2b2522;
+  padding: 10px;
+  background-color: #dedede;
+  margin: 4px;
+  border-radius: 4px;
+
+  
+  // this for having background as text color
+  // display: block;
+  // color: transparent;
+  // background-image: linear-gradient(-90deg, black, grey);
+  // -webkit-text-fill-color: transparent;
+  // -webkit-background-clip: text;
+  // background-color:grey;
+}
+
+.scene-label-container {
+  position: absolute;
+  top: 150px;
+  left: 0px;
+  border: 1px solid #888585;
+  border-radius: 4px;
+}

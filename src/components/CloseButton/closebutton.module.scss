@@ -1,0 +1,110 @@
+@import '../../variables.scss';
+
+$middleOfContainer: calc(50% - 1px);
+$lineWidth: 2px;
+
+$rotateStart: rotate(45deg);
+$rotateEnd: rotate(405deg);
+
+$itemSizeStart: 50%;
+$itemSizeEnd: 40%;
+
+$animationTime: 0.7s;
+
+.click-area {
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.click-area:hover {
+  .container {
+    animation: rotateButtonHover $animationTime ease;
+    transform: $rotateEnd;
+  }
+
+  .item {
+    animation: animateWidthToSmall $animationTime ease;
+    width: $itemSizeStart;
+  }
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+
+  position: relative;
+  transform: $rotateStart;
+
+  pointer-events: none;
+}
+
+.animate {
+  animation: rotateButton $animationTime ease;
+}
+
+@keyframes rotateButtonHover {
+  from { transform: $rotateStart; }
+  to { transform: $rotateEnd; }
+}
+
+@keyframes rotateButton {
+  from { transform: $rotateEnd; }
+  to { transform: $rotateStart; }
+}
+
+.fullLine {
+  width: 100%;
+  position: absolute;
+  height: $lineWidth;
+
+  top: $middleOfContainer;
+  left: 0;
+}
+
+.item {
+  width: $itemSizeEnd;
+  height: $lineWidth;
+  animation: animateWidthToBig $animationTime ease;
+  left: 50%;
+  position: inherit;
+  border-radius: 2px;
+  background-color: $orange;
+}
+
+@keyframes animateWidthToBig {
+  from { width: $itemSizeStart; }
+  to { width: $itemSizeEnd; }
+}
+
+@keyframes animateWidthToSmall {
+  from { width: $itemSizeEnd; }
+  to { width: $itemSizeStart; }
+}
+
+.click-area:hover {
+  .left {
+    .item { background-color: #00bcd4 !important; }
+  }
+
+  .right {
+    .item { background-color: #fb8716 !important; }
+  }
+
+  .top {
+    .item { background-color: #f4d022 !important; }
+  }
+
+  .bottom {
+    .item { background-color: #90ff0e !important; }
+  }
+}
+
+// .left { /* no rotation */ }
+.top { transform: rotate(90deg); }
+.right { transform: rotate(180deg); }
+.bottom { transform: rotate(270deg); }

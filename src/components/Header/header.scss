@@ -1,0 +1,88 @@
+@import '../../variables.scss';
+
+.header {
+  width: 100%;
+  height: $mob_heightHeader;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  a {
+    text-transform: uppercase;
+  }
+}
+
+.header-left {
+  // border: 1px solid  green;
+}
+
+.header-right {
+  display: flex;
+  position: absolute;
+  right: 0;
+}
+
+.open-menu-btn {
+  display: block;
+}
+
+.menu-item-container-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+.menu-item-container-desktop {
+  display: none;
+}
+
+/* desktop screen settings */
+@media only screen and (min-width: 600px) {
+  .menu-item-container-desktop {
+    display: flex;
+    align-items: center;
+  }
+
+  .open-menu-btn {
+    display: none !important;
+  }
+}
+
+
+
+.theme-dark .header {
+  background-color: $primaryDark;
+}
+
+.theme-light .header {
+  background-color: $lightBlue;
+}
+
+.header-animate-dark {
+  animation: headerBgAnimDark 1s linear;
+}
+@keyframes headerBgAnimDark {
+  from {
+    background-color: $lightBlue;
+  }
+  to {
+    background-color: $primaryDark;
+  }
+}
+
+.header-animate-light {
+  animation: headerBgAnimLight 1s linear;
+}
+@keyframes headerBgAnimLight {
+  from {
+    background-color: $primaryDark;
+  }
+  to {
+    background-color: $lightBlue;
+  }
+}
