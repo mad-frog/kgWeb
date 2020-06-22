@@ -60,7 +60,7 @@
 }
 
 .theme-light .header {
-  background-color: $lightBlue;
+  background-color: $orange;
 }
 
 .header-animate-dark {
@@ -68,7 +68,7 @@
 }
 @keyframes headerBgAnimDark {
   from {
-    background-color: $lightBlue;
+    background-color: $orange;
   }
   to {
     background-color: $primaryDark;
@@ -83,6 +83,6 @@
     background-color: $primaryDark;
   }
   to {
-    background-color: $lightBlue;
+    background-color: $orange;
   }
 }
