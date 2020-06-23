@@ -83,13 +83,6 @@ const mapStateToProps = (state: RootState) => ({
   theme: state.system.theme
 });
 
-// !!! DID not work
-// const mapDispatchToProps = (dispatch: any) => {
-//   return {
-//     toogleTheme: () => dispatch({ type: TOOGLE_THEME })
-//   }
-// }
-
 const mapDispatchToProps = {
   toogleTheme
 }

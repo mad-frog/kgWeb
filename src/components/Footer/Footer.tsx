@@ -17,7 +17,8 @@ export default class Footer extends React.Component {
         <a href="https://github.com/mad-frog"><GitHubIcon /></a>
         <a href="https://www.instagram.com/kitijakrumina/"><InstagramIcon /></a>
 
-        {<a href="https://api.whatsapp.com/send?phone=13016425136">
+        {
+          <a href="https://api.whatsapp.com/send?phone=13016425136">
             <WhatsAppIcon />
           </a>
         }
