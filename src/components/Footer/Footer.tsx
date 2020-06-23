@@ -8,17 +8,8 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 export default class Footer extends React.Component {
-  componentDidMount () {
-    console.log('FOOTER - did mount')
-  }
-
-  test () {
-    console.log('Yea, clicked');
-  }
-
   render () {
-    // Have to check if it is mobile, then show whatsapp icon
-
+    // NOTE Have to check if it is mobile, then show whatsapp icon
     return <footer className="footer-center">
       <div className="social-icons">
         <a href="https://www.linkedin.com/in/kitija-glover-583a0349/" ><LinkedInIcon /></a>

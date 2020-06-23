@@ -6,7 +6,15 @@ import { ThemeProvider } from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
 import Send from '@material-ui/icons/Send';
 
+import { Themes } from '../../store/system/types';
+import { connect } from 'react-redux';
+import { RootState } from '../../store';
+
 var nodemailer = require('nodemailer');
+
+interface StateProps {
+  theme: Themes
+}
 
 const initialState = {
   name: '',
@@ -23,7 +31,8 @@ const initialState = {
 
 type State = Readonly<typeof initialState>
 
-export default class Contacts extends React.Component<{}, State> {
+
+class ContactMe extends React.Component<StateProps> {
   readonly state: State = initialState;
   private timer: any;
 
@@ -176,11 +185,7 @@ export default class Contacts extends React.Component<{}, State> {
   }
 
   render () {
-
-    /* TODO:
-      must think about how to switch color between dark/light modes
-    */
-    const theme = createMuiTheme({
+    const themeDark = createMuiTheme({
       palette: {
         type: 'dark', // Switching the dark mode on is a single property value change.
         primary: {
@@ -191,7 +196,20 @@ export default class Contacts extends React.Component<{}, State> {
         },
       },
     });
-    
+
+    const themeLight = createMuiTheme({
+      palette: {
+        type: 'light', // Switching the dark mode on is a single property value change.
+        primary: {
+          main: '#fb8716'
+        },
+        secondary: {
+          main: '#1d1a19'
+        },
+      },
+    });
+
+    const theme = this.props.theme === Themes.DARK ? themeDark : themeLight;
 
     return <div className="contactsContainer">
       <div className="contactsBlock">
@@ -254,8 +272,6 @@ export default class Contacts extends React.Component<{}, State> {
           </div>
           <div className={'sendButton'}>
             <Button
-              variant="contained"
-              color="secondary"
               endIcon={<Send />}
               disableElevation
               onClick={this.handleSendForm}
@@ -269,3 +285,10 @@ export default class Contacts extends React.Component<{}, State> {
     </div>
   }
 }
+
+const mapState = (state: RootState) => ({
+  theme: state.system.theme
+})
+
+const connector = connect(mapState)
+export default connector(ContactMe)

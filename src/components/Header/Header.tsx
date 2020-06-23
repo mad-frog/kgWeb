@@ -23,10 +23,6 @@ export default class Header extends React.Component<IProps, IState> {
     animate: false
   }
 
-  componentDidMount () {
-    console.log('HEADER - did mount')
-  }
-
   handleToogleMenu = () => {
     this.setState({
       menuOpen: !this.state.menuOpen
@@ -55,7 +51,6 @@ export default class Header extends React.Component<IProps, IState> {
     const themeMode = this.props.darkMode ? ThemeModes.dark : ThemeModes.light;
     const animateBg = this.state.animate ? `header-animate${themeMode}` : '';
 
-    // console.log('HEADER')
     return <>
       <header className={`header ${animateBg}`}>
         <div className="header-left">

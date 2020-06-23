@@ -10,12 +10,7 @@ interface IProps {
 }
 
 export default class Projects extends React.Component<IProps> {
-  componentDidMount () {
-    // console.log('PROJECTS - did mount')
-  }
-
   render () {
-
     const projects = [
       // {
       //   id: "anim-letters",

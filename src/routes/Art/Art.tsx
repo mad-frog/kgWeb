@@ -50,7 +50,6 @@ export default class Art extends React.Component<{}, IState> {
     //   }
     // });
 
-    // console.log(photos);
     // return photos;
 
     return [
